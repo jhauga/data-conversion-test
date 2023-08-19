@@ -10,7 +10,7 @@
 # ---------------------------------------------------
 #
 # Set to 1 to agree; 0 to disagree.
-_acknowledgeAndAgreeToUSAGE_AGREEMENT=1
+_acknowledgeAndAgreeToUSAGE_AGREEMENT=0
 
 # INSTRUCTIONS:
 #  1. Define the new repo name in variable.
@@ -25,35 +25,34 @@ _acknowledgeAndAgreeToUSAGE_AGREEMENT=1
 
 # I. DEFINE NEW REPO
 # Name of new repository for tests result. 
-_testResultRepo="roffit-pull-diff" 
+_testResultRepo="command-test" 
 
 # II. CHANGE CONFIG VARIABLES
-_COMMAND_TEST="roffit"   # command ---- the command/script that will run
-_sourceUserName="bagder" # source ----- user that the repo was forked from
-_pullUserName="jhauga"   # pull ------- user with fork and making pull request
+_COMMAND_TEST="comman"   # command ---- the command/script that will run
+_sourceUserName="source" # source ----- user that the repo was forked from
+_pullUserName="pull"     # pull ------- user with fork and making pull request
 _useSource=1             # use source - Start off using source user's command
 
 # III. DEFINE OPTIONS USED
 # Define options that will be used with command to test builds.
 # By default the command will be run with no options.
 # Remove "" from array to unset 'run with no option default'.
-declare -a _optionsToRun=("" "--bare")
-_redirection="<>" # Set to > if command is used as - command -opt file.ext > file.ext
+declare -a _optionsToRun=("")
 
 # IV. DECLARE SOURCE FILE EXTENSIONS
 # Configuration - file extension to match and move to data folder.
-declare -a _fileExtensions=('.1' '.3' '.8' '.1.in')
+declare -a _fileExtensions=('.ext1' '.ext2' '.ext3')
 
 # V. CHANGE FILE EXTENSION FOR TARGET FILE
 _targetFileExtension=".html"
 
 # VI. DECALREE ADDITIONAL REPOS TO TEST TOOL
 # Configure user(s) and repositories to clone and build ful test from.
-declare -a _fullTestRepos=('nmap' 'nmap' 'libssh2' 'libssh2' 'curl' 'curl')
+declare -a _fullTestRepos=('userA' 'repoA' 'userB' 'repoB' 'userC' 'repoC')
 
 # VII. CHANGE UNIQUE REPO
 # Specify unique user repo to make separate foler.
-_unqUser="curl"
+_unqUser="userC"
 
 # VIII. CHANGE COMMAND SYNTAX
 # IMPORTANT - DO NOT CHANGE ELEMENTS - ONLY HOW IT WILL BE CALLED IN COMMAND LINE
