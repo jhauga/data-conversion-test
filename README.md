@@ -1,5 +1,7 @@
 # Template to test pull to data-conversion tool
 
+Ctrl + click [test results](https://jhauga.github.io/htmlpreview.github.com/?https://github.com/CHANGE_USER/CHANGE_REPO/blob/main/index.html).
+
 This can be used to make tests for/before making pull requests to
 a data conversion tool repository. Download zip or clone the repo
 locally. Edit the "config-variables.sh" file to run test.
@@ -20,17 +22,12 @@ before running test.
 There are no safe guards if you ```make full``` test and use repos with
 large amounts of data so be mindful of possible build sizes for test.
 
-### View resulte
-1. If final test repo is uploaded to Github:
-   - To see outputs from test [click here](https://jhauga.github.io/htmlpreview.github.com/?https://github.com/CHANGE_USER/CHANGE_REPO/blob/main/index.html).
-2. If final test remains local use method for localhost:
-   - For example - ```php -S localhost:8000```
-
+## INSTRUCTIONS
 ### Local Test Instructions
-1. Upload test files that will be converted to data/quick-test directories.
-   - gen - gneral files tested
+1. Make repo based on this template repo.
+2. Upload test files that will be converted to data/quick-test directories.
+   - gen - general files tested
    - unq - any unique or focus files tested
-2. Make repo based on this template repo.
 3. Read and agree to terms in USAGE_AGREEMENT.md. Either:
    - ``` cat USAGE_AGREEMENT.md ```
    - Click [link to file](https://github.com/jhauga/data-conversion-tool/blob/master/USAGE_AGREEMENT.md)
@@ -44,8 +41,10 @@ large amounts of data so be mindful of possible build sizes for test.
    - `` make clean ``
       
 ### Codespace Test Instruction
- 1. Upload test files that will be converted to data/quick-test directories.
- 2. Create new repository from template under  "Use this template".
+1. Make repo based on this template repo.
+2. Upload test files that will be converted to data/quick-test directories.
+   - gen - general files tested
+   - unq - any unique or focus files tested
  3. After naming new repo open it in codespace.
  4. Read and agree to terms in USAGE_AGREEMENT.md. Either:
     - ``` cat USAGE_AGREEMENT.md ```
@@ -59,8 +58,14 @@ large amounts of data so be mindful of possible build sizes for test.
     - `` make all ``
  9. Run server with:
     - `` node server.js ``
+    - Or use Github pages environment
  10. Create a new repo by:
     - `` CHANGE `` 
  11. Additionally to clean to reset repo:   
     - `` make clean ``
 
+### View resulte
+1. If final test repo is uploaded to Github:
+   - To see outputs from test [click here](https://jhauga.github.io/htmlpreview.github.com/?https://github.com/CHANGE_USER/CHANGE_REPO/blob/main/index.html).
+2. If final test remains local use method for localhost:
+   - For example - ```php -S localhost:8000```
