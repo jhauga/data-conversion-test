@@ -27,7 +27,7 @@ large amounts of data so be mindful of possible build sizes for test.
    - For example - ```php -S localhost:8000```
 
 ### Local Test Instructions
-1. Upload test files that will be converted to data/quick-test directories and delete temp filler file.
+1. Upload test files that will be converted to data/quick-test directories.
    - gen - gneral files tested
    - unq - any unique or focus files tested
 2. Make repo based on this template repo.
@@ -44,7 +44,7 @@ large amounts of data so be mindful of possible build sizes for test.
    - `` make clean ``
       
 ### Codespace Test Instruction
- 1. Upload test files that will be converted to data/quick-test directories and delete temp filler file.
+ 1. Upload test files that will be converted to data/quick-test directories.
  2. Create new repository from template under  "Use this template".
  3. After naming new repo open it in codespace.
  4. Read and agree to terms in USAGE_AGREEMENT.md. Either:
