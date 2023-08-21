@@ -25,9 +25,12 @@ large amounts of data so be mindful of possible build sizes for test.
 ## INSTRUCTIONS
 ### Local Test Instructions
 1. Make repo based on this template repo.
-2. Upload test files that will be converted to data/quick-test directories.
-   - gen - general files tested
-   - unq - any unique or focus files tested
+2. Either
+   - Upload test files that will be converted to data/quick-test directories.
+      - gen - general files tested
+      - unq - any unique or focus files tested
+   - Use a ready made config for a command previously tested. Use pre-config below:
+      - `` make roffit ``
 3. Read and agree to terms in USAGE_AGREEMENT.md. Either:
    - ``` cat USAGE_AGREEMENT.md ```
    - Click [link to file](https://github.com/jhauga/data-conversion-tool/blob/master/USAGE_AGREEMENT.md)
@@ -42,9 +45,12 @@ large amounts of data so be mindful of possible build sizes for test.
       
 ### Codespace Test Instruction
 1. Make repo based on this template repo.
-2. Upload test files that will be converted to data/quick-test directories.
-   - gen - general files tested
-   - unq - any unique or focus files tested
+2. Either
+   - Upload test files that will be converted to data/quick-test directories.
+      - gen - general files tested
+      - unq - any unique or focus files tested
+   - Use a ready made config for a command previously tested. Use pre-config below:
+      - `` make roffit ``
  3. After naming new repo open it in codespace.
  4. Read and agree to terms in USAGE_AGREEMENT.md. Either:
     - ``` cat USAGE_AGREEMENT.md ```
@@ -52,7 +58,7 @@ large amounts of data so be mindful of possible build sizes for test.
  5. Change variables in "config-variables.sh".
  6. Install necessary dependencies
  7. Copy paste below line:
-    - ``` chmod a+x Makefile agree config-variables.sh data-test extract-full-data.sh server.js ```
+    - `` chmod a+x Makefile agree config-variables.sh data-test extract-full-data.sh server.js ``
  8. Run either:
     - `` make quick ``
     - `` make all ``

@@ -206,11 +206,26 @@
   <div id="diffFiles"></div>
  </div> 
  
+ <script id="removedIfOnGitHub" src="https://cdn.jsdelivr.net/gh/jhauga/general/reusableJavascriptFunctions.js"></script>
  <!-- Link to js tools -->
- <script src="https://cdn.jsdelivr.net/gh/jhauga/general/reusableJavascriptFunctions.js"></script>
+ <script defer>
+  setTimeout(
+   function() {
+    if (location.href.indexOf("github.com") > -1) {
+     let removedIfOnGitHub = document.getElementById("removedIfOnGitHub");
+     removedIfOnGitHub.remove();
+     let linkcdn = document.createElement("script");
+     linkcdn.src = "https://cdn.jsdelivr.net/gh/jhauga/general/reusableJavascriptFunctions.js";
+     document.body.appendChild(linkcdn);    
+    }
+   }, 1000);	 
+ </script>
  
  <!-- Page menu and repo scripts -->
  <script>
+  // Changed with make tool
+  var cur_test_results = "https://github.com/CHANGE_USER/CHANGE_REPO/blob/main/";
+  
   // Global elements.
   var navList = document.getElementById("navList");
   var navListATags = navList.getElementsByTagName("a");
@@ -411,11 +426,18 @@
        let curNestedDropdown = nestedDropdown[i];
        curNestedDropdown.innerHTML = "<ul>";
        for (ii = 0; ii < nestDropArr[i].length; ii++) {
-        curNestedDropdown.innerHTML += "<li><a target='_blank' href='" +
-         nestDropArr[i][ii].replace("COMMAND_USED", "source") + "'>" +
-          //nestDropArr[i][ii] + "'>" +
-         nestDropArr[i][ii].substring(nestDropArr[i][ii].lastIndexOf("/")+1, nestDropArr[i][ii].indexOf("-")) +
-         "</a></li><br>";
+	       if (location.href.indexOf("https://jhauga.github.io/htmlpreview.github.com/?") > -1) {
+         curNestedDropdown.innerHTML += "<li><a target='_blank' href='" +
+	         "https://jhauga.github.io/htmlpreview.github.com/?" + cur_test_results +
+          nestDropArr[i][ii].replace("COMMAND_USED", "source") + "'>" +          
+          nestDropArr[i][ii].substring(nestDropArr[i][ii].lastIndexOf("/")+1, nestDropArr[i][ii].indexOf("-")) +
+          "</a></li><br>";
+	        } else {
+         curNestedDropdown.innerHTML += "<li><a target='_blank' href='" +
+          nestDropArr[i][ii].replace("COMMAND_USED", "source") + "'>" +          
+          nestDropArr[i][ii].substring(nestDropArr[i][ii].lastIndexOf("/")+1, nestDropArr[i][ii].indexOf("-")) +
+          "</a></li><br>";
+    	   }
        }
        curNestedDropdown.innerHTML += "</ul>";
        i++;
@@ -534,5 +556,6 @@
    console.log(linkCount);
 	}, 2000);
  </script>
+
 </body>
 </html>

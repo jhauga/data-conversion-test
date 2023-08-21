@@ -46,7 +46,7 @@ mkdir -p diff/unq diff/err diff/gen tests/unq tests/err tests/gen
 # Get source and pulled command file from github.
 function _git_clone_repo() {
 	_curGitHubUser="$1"
-	git clone https://github.com/$_curGitHubUser/$_COMMAND_TEST.git commands/"$_curGitHubUser"-"$_COMMAND_TEST"/	
+	git clone https://github.com/$_curGitHubUser/$_repoName.git commands/"$_curGitHubUser"-"$_COMMAND_TEST"/
 }
 # Make the dir to compare source and pull command.
 _git_clone_repo "$_sourceUserName" && _git_clone_repo "$_pullUserName"
@@ -316,6 +316,9 @@ echo "${_COMMAND_TEST^}" > support/COMMAND-USED.txt
 # Change link in README.md
 sed -i "s/CHANGE_USER/$_pullUserName/" README.md
 sed -i "s/CHANGE_REPO/$_testResultRepo/" README.md
+
+# Change  user and repo in index.html
+sed -i "s|var cur_test_results = \"https://github.com/CHANGE_USER/CHANGE_REPO/blob/main/\";|var cur_test_results = \"https://github.com/$_pullUserName/$_testResultRepo/blob/main/\";|" index.html
 
 # remove option call signs
 sed -i -E 's/([-]+)(.*)/\2/g' support/options-ran.txt
