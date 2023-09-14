@@ -160,8 +160,8 @@ function _commandSyntax() {
 
 # SECONDS - Max number of seconds each command has to run test.
 _max_run_time=600
-# MB - Max size the test can build with both commands.
-_max_test_size=20
+# MB - Max size the test can build with both commands (source/pull).
+_max_test_size=100
 
 # MB - Max size that each cloned repo can extract
 _max_clone_extract=50
