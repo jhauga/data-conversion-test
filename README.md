@@ -1,6 +1,8 @@
 # Template to test pull to data-conversion tool
 
-Ctrl + click [test results](https://jhauga.github.io/htmlpreview.github.com/?https://github.com/CHANGE_USER/CHANGE_REPO/blob/main/index.html).
+This template will work with:
+ - Most Ubuntu based OS
+ - Recent Mac OS
 
 This can be used to make tests for/before making pull requests to
 a data conversion tool repository. Download zip or clone the repo
@@ -19,8 +21,9 @@ is important that you edit the "config-variables.sh" file
 before running test.
 
 <strong>IMPORTANT</strong>: <br>
-There are no safe guards if you ```make full``` test and use repos with
-large amounts of data so be mindful of possible build sizes for test.
+There are safe guards if you ```make full``` test. They are:
+ - Max build sized - 50 MB
+ - Max build time  - 900 seconds (*15 minutes*)
 
 ## INSTRUCTIONS
 ### Local Test Instructions
@@ -29,7 +32,7 @@ large amounts of data so be mindful of possible build sizes for test.
    - Upload test files that will be converted to data/quick-test directories.
       - gen - general files tested
       - unq - any unique or focus files tested
-   - Use a ready made config for a command previously tested. Use pre-config below:
+   - Use a ready made config for a command previously tested. Use pre-configs below:
       - `` make roffit ``
       - `` make asciidoctor ``
 3. Read and agree to terms in USAGE_AGREEMENT.md. Either:
@@ -54,7 +57,7 @@ large amounts of data so be mindful of possible build sizes for test.
    - Upload test files that will be converted to data/quick-test directories.
       - gen - general files tested
       - unq - any unique or focus files tested
-   - Use a ready made config for a command previously tested. Use pre-config below:
+   - Use a ready made config for a command previously tested. Use pre-configs below:
       - `` make roffit ``
       - `` make asciidoctor ``
  3. After naming new repo open it in codespace.
@@ -73,19 +76,19 @@ large amounts of data so be mindful of possible build sizes for test.
     - `` make full ``
  9. Run server with:
     - `` node server.js ``
-    - Or use Github pages environment
- 10. Create a new repo by:
-    - `` CHANGE `` 
- 11. Additionally to clean to reset repo:   
+    - Or use GitHub pages environment
+      - `` php -S localhost:3000 `` should work
+ 10. Additionally to clean to reset repo:   
     - `` make clean ``
     - `` make retest ``
 
 ### View resulte
-1. If final test repo is uploaded to Github:
-   - To see outputs from test there will be a link generated and included at the top of the new README.md file.
+1. If final test repo is uploaded to GitHub:
+   - To see output from test there will be a link generated and included at the top of the new README.md file.
 2. If final test remains local use method for localhost:
    - For example - ```php -S localhost:8000```
 
 ### Additional Notes
-  - Once the test has completed a new README.md file will be genereated, which gives a brief overview of the test procedure.
+  - Once the test has completed a new README.md file will be generated, which gives a brief overview of the test procedure.
   - The README.md that was used in the original template repository will be copied to INSTRUCTIONS.md
+
