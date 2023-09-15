@@ -1,7 +1,7 @@
 # Template to test pull to data-conversion tool
 
 This template will work with:
- - Most Ubuntu based OS
+ - Most Unix based OS
  - Recent Mac OS
 
 This can be used to make tests for/before making pull requests to
